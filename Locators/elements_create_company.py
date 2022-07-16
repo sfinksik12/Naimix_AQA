@@ -1,0 +1,10 @@
+INN_FIELD = '[name=inn]'
+OFFICIAL_NAME = '[name=fullName]'
+SHORT_NAME = '[name=name]'
+BRAND = '[name=brand]'
+ADRESSES = '[placeholder="Введите адрес компании"]'
+NAME = '[name=representativeName]'
+PHONE = '[name=representativePhone]'
+EMAIL = '[name=representativeEmail]'
+CATEGORY = '[id=categoryId]'
+
