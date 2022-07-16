@@ -2,7 +2,7 @@ from playwright.sync_api import Page
 from Locators import elements_settings_of_naimix_page
 
 
-class NaimixSettingsPage():
+class NaimixSettingsPage:
     def __init__(self, page: Page):
         self.page = page
 
