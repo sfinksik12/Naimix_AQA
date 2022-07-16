@@ -26,10 +26,10 @@ class App:
 
     def close(self):
         self.page.close()
-        self.browser.close()
+        self.context.close()
         self.browser.close()
 
-    def login_as(self, data: list):
+    def login(self, data: list):
         self.page.fill(elements_login_page.LOGIN_FIELD, data[0])
         self.page.fill(elements_login_page.PASSWORD_FIELD, data[1])
         self.page.locator(elements_login_page.ENTER_BTN).click()
