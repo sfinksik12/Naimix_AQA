@@ -13,6 +13,9 @@ class App:
         self.context = self.browser.new_context(locale='ru_RU')
         self.page = self.context.new_page()
         self.api_request_context = self.context.request
+        #!!!
+        self.api_context = playwright.request.new_context()
+
 
 
         # Pages
@@ -35,6 +38,11 @@ class App:
         self.page.fill(elements_login_page.LOGIN_FIELD, data['login'])
         self.page.fill(elements_login_page.PASSWORD_FIELD, data['password'])
         self.page.locator(elements_login_page.ENTER_BTN).click()
+
+    def GET(self, endpoint):
+        response = self.api_context.get(endpoint)
+        return response
+
 
     def POST(self, endpoint, api_token, data):
         self.response = self.api_request_context.post(
