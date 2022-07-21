@@ -36,3 +36,13 @@ payload = {
   "depositDistributedByObjects": False
 }
 
+titi = {
+"clientId":"405f967d-dedd-4a3d-9348-71c21cf3410a",
+ "pageNum":1,
+ "pageSize":25,
+ "archiveFilter": False,
+ "fioSort":"asc",
+ "needToEnrichPhantomUsersByClientInfo": True,
+ "emailFilter":"wow"
+}
+
