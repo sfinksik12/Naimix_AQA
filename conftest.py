@@ -14,14 +14,16 @@ def get_playwright():
 
 @fixture
 def desktop(get_playwright):
-    app = App(get_playwright, base_url=settings.BASE_URL)
+    app = App(get_playwright, base_url=settings.BASE_URL_UI)
     yield app
     app.close()
 
+
 @fixture
-def desktop_api(get_playwright):
-    app = App_Api(get_playwright)
-    yield app
+def desktop_api():
+    api = App_Api(settings.BASE_URL_API)
+    yield api
+    api.close()
 
 
 @fixture()

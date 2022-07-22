@@ -1,7 +1,18 @@
-Admin_Naimix = {"login": "nmadmin", "password": "nmadmin123", 'auth_token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6Im5tYWRtaW4iLCJleHAiOjE2NTg0MzAxMDYsInJvbGUiOiJBRE1JTiIsImNsaWVudElkIjoiMDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwIiwic2Vzc2lvbklkIjoiYmI5YThmNzEtMThjNy00NmRjLTljNDUtZmMyNjU5ZWUzZWE4IiwiY2xpZW50VXNlcklkIjoiMDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwIiwiYXBpQWNjZXNzRW5hYmxlZCI6ZmFsc2UsIm1hbmFnZUFsbENsaWVudHMiOmZhbHNlfQ.y9csrQaM_MoN9z8jNBu7Mjy57s2h4Y9gyMzkGM_SVKPFvb-1NjCVqb-dqXaSNtCyC9ArK28uIq1iQLOYDf4pGw'}
+import json
 
-Manager_Naimix = {'login': 'mm@list.ru', 'password': 'Www1234!'}
 
+Admin_Naimix = json.dumps({"login": "nmadmin", "password": "nmadmin123"})
+Manager_Naimix = json.dumps({'login': 'mm@list.ru', 'password': 'Www1234!'})
+
+q = json.dumps({"clientId": "405f967d-dedd-4a3d-9348-71c21cf3410a",
+           "pageNum": 1,
+           "pageSize": 25,
+           "archiveFilter": False,
+           "fioSort": "asc",
+           "needToEnrichPhantomUsersByClientInfo": True,
+           "fioFilter": "павел"
+           }
+          )
 
 
 

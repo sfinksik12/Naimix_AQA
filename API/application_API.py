@@ -1,25 +1,36 @@
-from playwright.sync_api import Playwright
+import requests
+import settings
 
 
 class App_Api:
-    def __init__(self, playwright: Playwright):
-        self.api_context = playwright.request.new_context()
+    def __init__(self, base_url: str):
+        self.session = requests.session()
+        self.base_url = base_url
 
-    def GET(self, endpoint):
-        response = self.api_context.get(endpoint)
-        assert response.status == 200
+    def status_code_200(self):
+        request = self.session.get(self.base_url)
+        assert request.status_code == 200
 
-    def POST(self, endpoint, api_token, data):
-        response = self.api_context.post(
-            endpoint,
-            headers={
-                "Accept": "application/json;charset=UTF-8",
-                'Authorization': f'Bearer {api_token}',
-                'Content-Type': 'application/json'
-                },
-            data=data,
+    def get_access_token(self, auth: dict):
+        request = self.session.post(
+            url=self.base_url + '/auth/login',
+            data=auth,
+            headers=settings.HEADERS
         )
-        print(response.text)
+        return request.json()['accessToken']
 
+    def POST(self, endpoint: str, auth: dict, data: dict):
+        token = self.get_access_token(auth)
+        request = self.session.post(
+            url=self.base_url + endpoint,
+            data=data,
+            headers=
+            {
+                "Accept": "application/json;charset=UTF-8",
+                'Authorization': f'Bearer {token}',
+                'Content-Type': 'application/json'
+            },
+        )
 
-
+    def close(self):
+        self.session.close()
