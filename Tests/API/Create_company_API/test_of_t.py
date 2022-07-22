@@ -1,11 +1,11 @@
 import json
 
-from Data import users
+from Data import Users
 
 
 def test_one(desktop_api):
-    desktop_api.POST(
+    desktop_api.Post(
         '/clients/users/getPage',
-        users.Admin_Naimix,
-        users.q
+        Users.Admin_Naimix,
+        Users.example
     )

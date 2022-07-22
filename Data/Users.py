@@ -4,7 +4,7 @@ import json
 Admin_Naimix = json.dumps({"login": "nmadmin", "password": "nmadmin123"})
 Manager_Naimix = json.dumps({'login': 'mm@list.ru', 'password': 'Www1234!'})
 
-q = json.dumps({"clientId": "405f967d-dedd-4a3d-9348-71c21cf3410a",
+example = json.dumps({"clientId": "405f967d-dedd-4a3d-9348-71c21cf3410a",
            "pageNum": 1,
            "pageSize": 25,
            "archiveFilter": False,

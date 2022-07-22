@@ -1,5 +1,5 @@
 import requests
-import settings
+import Settings
 
 
 class App_Api:
@@ -15,11 +15,11 @@ class App_Api:
         request = self.session.post(
             url=self.base_url + '/auth/login',
             data=auth,
-            headers=settings.HEADERS
+            headers=Settings.CONTENT_TYPE
         )
         return request.json()['accessToken']
 
-    def POST(self, endpoint: str, auth: dict, data: dict):
+    def Post(self, endpoint: str, auth: dict, data: dict):
         token = self.Get_Bearer_Token(auth)
         request = self.session.post(
             url=self.base_url + endpoint,

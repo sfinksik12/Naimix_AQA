@@ -1,4 +1,4 @@
-from Data import users
+from Data import Users
 
 
 def test_Admin_Naimix_Create_Company(desktop_api):
