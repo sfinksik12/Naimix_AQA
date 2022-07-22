@@ -7,11 +7,11 @@ class App_Api:
         self.session = requests.session()
         self.base_url = base_url
 
-    def status_code_200(self):
+    def Status_Code_is_200(self):
         request = self.session.get(self.base_url)
         assert request.status_code == 200
 
-    def get_access_token(self, auth: dict):
+    def Get_Bearer_Token(self, auth: dict):
         request = self.session.post(
             url=self.base_url + '/auth/login',
             data=auth,
@@ -20,7 +20,7 @@ class App_Api:
         return request.json()['accessToken']
 
     def POST(self, endpoint: str, auth: dict, data: dict):
-        token = self.get_access_token(auth)
+        token = self.Get_Bearer_Token(auth)
         request = self.session.post(
             url=self.base_url + endpoint,
             data=data,
